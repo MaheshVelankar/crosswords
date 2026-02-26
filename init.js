@@ -12,7 +12,7 @@ const cwFile = node + '.json';
 $.getJSON(cwFile)
     .done(function(data) {
         // Success: data is the parsed JSON object
-        console.log( "$ JSON Data received, name is " + json.name);
+        console.log( "$ JSON Data received, name is " + data.name);
         //console.log("Success:", data);
     })
     .fail(function(jqXHR, textStatus, errorThrown) {
