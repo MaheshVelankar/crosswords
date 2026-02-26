@@ -29,7 +29,7 @@ $.getJSON(cwFile)
 function renderCrossword (data) {
     var $cwBox = $('#cw-box');
     var tableMarkup = [];
-    tableMarkup.push('<table>');
+    tableMarkup.push('<table class="crossword-grid">');
     tableMarkup.push('<caption>');
     tableMarkup.push('test cw');
     tableMarkup.push('</caption>');

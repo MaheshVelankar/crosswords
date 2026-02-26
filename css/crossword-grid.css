@@ -1,3 +1,7 @@
+table.crossword-grid {
+  border-collapse: collapse;
+}
+
 .crossword-puzzle-frame {
   display: flex;
   justify-content: center; /* Centers children horizontally */
