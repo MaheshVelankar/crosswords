@@ -12,6 +12,7 @@ const cwFile = 'data/' + node + '.json';
 $.getJSON(cwFile)
     .done(function(data) {
         // Success: data is the parsed JSON object
+        renderCrossword (data);
         console.log( "$ JSON Data received, name is " + data.name);
         //console.log("Success:", data);
     })
@@ -25,3 +26,9 @@ $.getJSON(cwFile)
         console.log("Request complete.");
     });
 
+function renderCrossword (data) {
+   var $cwTable = $('#cw-box table');
+   var $cwCaption = $('<caption>').text('test cw');
+    $cwTable.append($cwCaption);
+
+}
