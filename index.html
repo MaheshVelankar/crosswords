@@ -11,22 +11,1339 @@
 
 <div id="grid"></div>
 
-<div id="clues">
-  <h2>Clues</h2>
-  <div>
-    <strong>Across</strong>
-    <ul>
-      <li>1. Opposite of cold (3)</li>
-      <li>3. Day before today (9)</li>
-    </ul>
+<div class="simple crossword field-formatter-text_crossword" data-once="crossword-init">
+
+  <div class="crossword-header">
+          <div class="crossword-details">
+        <h1 class="crossword-title">put crossword title here</h1>
+
+        <h2 class="crossword-author">put author's name here</h2>
+
+        <p class="crossword-notepad">Any note you want to add to the crossword page (Simple HTML accepted)</p>
+
+      </div>
+        
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_controls' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-controls--text-crossword.html.twig
+   ✅ crossword-controls.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-controls.html.twig' -->
+<div class="crossword-controls">
+        <div class="crossword-buttons">
+            <p>
+      उत्तरे:
+      </p>
+        <div class="solution-buttons">
+          
+          
+          <button class="button-clear" data-confirm="उत्तरे खरोखर पुसावयाची आहेत का? ही क्रिया उलटवता येत नाही." title="पुसावी" data-once="crossword-clear-click">पुसावी</button>
+
+        </div>
+                    <div class="undo-redo">
+          
+          
+          <button class="button-instructions" data-confirm="" title="वापर/वावर" data-once="crossword-button-instructions">वापर/वावर</button>
+
+        </div>
+          </div>
   </div>
-  <div>
-    <strong>Down</strong>
-    <ul>
-      <li>1. Bright star at center of solar system (3)</li>
-      <li>2. Frozen water (3)</li>
-    </ul>
+  <div class="crossword-instructions-container" aria-hidden="false">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_instructions' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-instructions--text-crossword.html.twig
+   ✅ crossword-instructions.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-instructions.html.twig' -->
+<div class="crossword-instructions">
+  <div class="crossword-instructions-square">
+    <h3>सक्रिय चौकोन</h3>
+    <dl>
+      <div>
+        <dt>बाणांच्या कळी:</dt>
+        <dd>लगतच्या चौकोनावर जा.</dd>
+      </div>
+      <div>
+        <dt>एंटर/रिटर्न:</dt>
+        <dd>पुढला चौकोन.</dd>
+      </div>
+      <div>
+        <dt>बॅक स्पेस/डिलीट:</dt>
+        <dd>सक्रिय चौकोन रिकामा करून आदल्या चौकोनावर जा.</dd>
+      </div>
+                      </dl>
   </div>
+  <div class="crossword-instructions-clue">
+    <h3>सक्रिय शोधसूत्र</h3>
+    <dl>
+      <div>
+        <dt>टॅब:</dt>
+        <dd>पुढले शोधसूत्र.</dd>
+      </div>
+      <div>
+        <dt>शिफ्ट+टॅब:</dt>
+        <dd>आदले शोधसूत्र.</dd>
+      </div>
+      <div>
+        <dt>शिफ्ट+उजवा बाण:</dt>
+        <dd>पुढले अनुत्तरित शोधसूत्र.</dd>
+      </div>
+      <div>
+        <dt>शिफ्ट+डावा बाण:</dt>
+        <dd>आदले अनुत्तरित शोधसूत्र.</dd>
+      </div>
+      <div>
+        <dt>स्पेसबार:</dt>
+        <dd>दिशा बदला.</dd>
+      </div>
+      <div>
+        <dt>एस्केप:</dt>
+        <dd>Escape puzzle.</dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-instructions.html.twig' -->
+
+
+  </div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-controls.html.twig' -->
+
+
+  </div>
+
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_active_clues' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-active-clues--text-crossword.html.twig
+   ✅ crossword-active-clues.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-active-clues.html.twig' -->
+<div class="clues-and-congrats">
+  <div id="active-clues" class="active-clues">
+    <style>
+      .active-clues .across .numeral:after {
+        content: "आ";
+      }
+      .active-clues .down .numeral:after {
+        content: "उ";
+      }
+    </style>
+    <div class="active-clues-text"><div class="active across">
+  <span class="numeral">१</span> मला साठ म्हणून गोंधळण्याआधी मी हे घालून पदार्थ अतिशय चवदार बनवतो
+</div></div>
+    <div class="express-buttons">
+      <button class="prev-clue-express clue-express" id="prev-clue-express" title="आदले अनुत्तरित शोधसूत्र" data-once="crossword-express-click"></button>
+      <button class="next-clue-express clue-express" id="next-clue-express" title="पुढले अनुत्तरित शोधसूत्र" data-once="crossword-express-click"></button>
+    </div>
+  </div>
+      <div class="crossword-congrats">अभिनंदन!</div>
+  </div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-active-clues.html.twig' -->
+
+
+
+  <div class="crossword-puzzle clearfix">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid--text-crossword.html.twig
+   ✅ crossword-grid.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid.html.twig' -->
+<div class="crossword-puzzle-frame">
+  <div class="crossword-puzzle-box">
+    <table class="crossword-grid crossword-columns-8 crossword-rows-6">
+      <caption>
+   Click on any square and start typing
+      </caption>
+      
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tbody><tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="0" data-clue-index-across="0" data-numeral="1" data-fill="Z" class="crossword-square highlight active" data-once="crossword-square-click">
+  
+      <span class="numeral">१</span>
+    <input id="sq_1_1" type="text" class="phantom crossword-input" tabindex="-1" aria-label="1 across. मला साठ म्हणून गोंधळण्याआधी मी हे घालून पदार्थ अतिशय चवदार बनवतो. 5 letters.">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="0" data-clue-index-across="0" data-fill="Z" class="crossword-square highlight" data-once="crossword-square-click">
+  
+    <input id="sq_1_2" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="0" data-clue-index-across="0" data-clue-index-down="0" data-numeral="2" data-fill="Z" class="crossword-square highlight" data-once="crossword-square-click">
+  
+      <span class="numeral">२</span>
+    <input id="sq_1_3" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="0" data-clue-index-across="0" data-fill="Z" class="crossword-square highlight" data-once="crossword-square-click">
+  
+    <input id="sq_1_4" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="0" data-clue-index-across="0" data-fill="Z" class="crossword-square highlight" data-once="crossword-square-click">
+  
+    <input id="sq_1_5" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="0" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="0" data-clue-index-down="1" data-numeral="3" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">३</span>
+    <input id="sq_1_7" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="0" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="1" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="1" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="1" data-clue-index-down="0" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_2_3" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="1" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="1" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="1" data-clue-index-across="1" data-clue-index-down="2" data-numeral="4" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">४</span>
+    <input id="sq_2_6" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="1" data-clue-index-across="1" data-clue-index-down="1" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_2_7" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="1" data-clue-index-across="1" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_2_8" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="2" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="2" data-clue-index-across="2" data-numeral="5" data-fill="Z" class="bbar crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">५</span>
+    <input id="sq_3_2" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="2" data-clue-index-across="2" data-clue-index-down="0" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_3_3" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="2" data-clue-index-across="2" data-clue-index-down="3" data-numeral="6" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">६</span>
+    <input id="sq_3_4" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="2" data-clue-index-across="2" data-fill="Z" class="rbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_3_5" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="2" data-clue-index-down="2" data-fill="Z" class="rbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_3_6" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="2" data-clue-index-down="1" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_3_7" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="2" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="3" data-clue-index-across="3" data-numeral="7" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">७</span>
+    <input id="sq_4_1" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="3" data-clue-index-across="3" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_4_2" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="3" data-clue-index-across="3" data-clue-index-down="0" data-fill="Z" class="rbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_4_3" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="3" data-clue-index-down="3" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_4_4" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="3" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="3" data-clue-index-down="2" data-fill="Z" class="rbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_4_6" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="3" data-clue-index-down="1" data-fill="Z" class="bbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_4_7" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="3" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="4" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="4" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="4" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="4" data-clue-index-across="4" data-clue-index-down="3" data-numeral="8" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">८</span>
+    <input id="sq_5_4" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="4" data-clue-index-across="4" data-clue-index-down="4" data-numeral="9" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+      <span class="numeral">९</span>
+    <input id="sq_5_5" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="4" data-clue-index-across="4" data-clue-index-down="2" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_5_6" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="4" data-clue-index-across="4" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_5_7" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="4" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_grid_row' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-grid-row--text-crossword.html.twig
+   ✅ crossword-grid-row.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+<tr class="crossword-row">
+  
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="0" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="1" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="2" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="3" data-row="5" data-clue-index-down="3" data-fill="Z" class="rbar crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_6_4" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="4" data-row="5" data-clue-index-down="4" data-fill="Z" class="crossword-square" data-once="crossword-square-click">
+  
+    <input id="sq_6_5" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="5" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="6" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_square' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-square--text-crossword.html.twig
+   ✅ crossword-square.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+<td data-col="7" data-row="5" class="black crossword-square" data-once="crossword-square-click">
+  
+    <input id="" type="text" class="phantom crossword-input" tabindex="-1">
+  <div class="square-bulk"></div>
+  <div class="square-fill"></div>
+</td>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-square.html.twig' -->
+
+
+</tr>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid-row.html.twig' -->
+
+
+    </tbody></table>
+  </div>
+</div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-grid.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clues' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clues--text-crossword--across.html.twig
+   ▪️ crossword-clues--text-crossword.html.twig
+   ▪️ crossword-clues--across.html.twig
+   ✅ crossword-clues.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clues.html.twig' -->
+<div class="across crossword-clues">
+      <div class="crossword-clues-header">
+      <button class="crossword-clue-change prev" title="आदले शोधसूत्र" data-dir="across" data-clue-change="-1" data-once="crossword-clue-change-click"></button>
+      <button class="crossword-dir-change" data-dir="across" data-once="crossword-dir-change-click">आडवे शब्द</button>
+      <button class="crossword-clue-change next" title="पुढले शोधसूत्र" data-dir="across" data-clue-change="1" data-once="crossword-clue-change-click"></button>
+    </div>
+    <h2 class="clues-heading" hidden="" aria-hidden="false">आडवे शब्द</h2>
+  <ul data-once="body" class="ul-0">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--across.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-across="0" data-clue-numeral-across="1" class="crossword-clue li-0 active" data-once="ul crossword-clue-click">
+  <span class="numeral">१</span> मला साठ म्हणून गोंधळण्याआधी मी हे घालून पदार्थ अतिशय चवदार बनवतो
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--across.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-across="1" data-clue-numeral-across="4" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">४</span> राहण्यास हा हवा । आणि वाहती हवा ॥
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--across.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-across="2" data-clue-numeral-across="5" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">५</span> बिलात लाव म्हटले की आला राग!
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--across.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-across="3" data-clue-numeral-across="7" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">७</span> केर काढून हाक मारल्या मारल्या कवितेतल्यासारखी हासतेस!
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--across.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-across="4" data-clue-numeral-across="8" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">८</span> धातूसाठी खोदलेले क्षेत्र बोलण्यात येते तेव्हा होणारी प्रशंसा
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+  </ul>
+</div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clues.html.twig' -->
+
+
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clues' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clues--text-crossword--down.html.twig
+   ▪️ crossword-clues--text-crossword.html.twig
+   ▪️ crossword-clues--down.html.twig
+   ✅ crossword-clues.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clues.html.twig' -->
+<div class="down crossword-clues">
+      <div class="crossword-clues-header">
+      <button class="crossword-clue-change prev" title="आदले शोधसूत्र" data-dir="down" data-clue-change="-1" data-once="crossword-clue-change-click"></button>
+      <button class="crossword-dir-change" data-dir="down" data-once="crossword-dir-change-click">उभे शब्द</button>
+      <button class="crossword-clue-change next" title="पुढले शोधसूत्र" data-dir="down" data-clue-change="1" data-once="crossword-clue-change-click"></button>
+    </div>
+    <h2 class="clues-heading" hidden="" aria-hidden="false">उभे शब्द</h2>
+  <ul data-once="body" class="ul-0">
+    
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--down.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-down="0" data-clue-numeral-down="2" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">२</span> जहाजावरील मजुरापुढे स्वरपट्टीतला एक स्वर काढणे ही सारवासारव झाली!
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--down.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-down="1" data-clue-numeral-down="3" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">३</span> ठरलेय द्यावयाचे। कडधान्य त्यात साचे। हे धाम ईश्वराचे॥
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--down.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-down="2" data-clue-numeral-down="4" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">४</span> नेसत्या वस्त्राच्या चुणीला अगदी किंचित वेळ लागेल हे लक्षपूर्वक पाहणे.
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--down.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-down="3" data-clue-numeral-down="6" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">६</span> अवकाळी फटक्याची खूण अंगावर उमटलेली, तिला बोलणे लागलेले!
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+
+<!-- THEME DEBUG -->
+<!-- THEME HOOK: 'crossword_clue' -->
+<!-- FILE NAME SUGGESTIONS:
+   ▪️ crossword-clue--down.html.twig
+   ✅ crossword-clue.html.twig
+-->
+<!-- BEGIN OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+<li data-clue-index-down="4" data-clue-numeral-down="9" class="crossword-clue li-0" data-once="ul crossword-clue-click">
+  <span class="numeral">९</span> अन्नग्रहणाची गळ घातलेली गणवेशाची एक रंगछटा
+</li>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clue.html.twig' -->
+
+
+  </ul>
+</div>
+
+<!-- END OUTPUT from 'modules/contrib/crossword/templates/crossword-clues.html.twig' -->
+
+
+  </div>
+
 </div>
 
 <script src="script.js"></script>
