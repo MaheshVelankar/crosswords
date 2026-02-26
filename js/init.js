@@ -41,7 +41,7 @@ function renderCrossword (data) {
         var row = data.puzzle.grid[i];
         var colsCount = row.length;
         console.log('row', i, 'colcount', colsCount);
-        for (var j=0; j > colsCount; j++) {A
+        for (var j=0; j > colsCount; j++) {
             var col = row[j];
             tableMarkup.push('<td>');
             tableMarkup.push('a');
