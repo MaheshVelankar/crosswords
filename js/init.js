@@ -43,11 +43,11 @@ function renderCrossword (data) {
         console.log('row', i, 'colcount', colsCount);
         for (var j=0; j > colsCount; j++) {A
             var col = row[j];
-    tableMarkup.push('<td>');
-    tableMarkup.push('a');
-    tableMarkup.push('</td>');
+            tableMarkup.push('<td>');
+            tableMarkup.push('a');
+            tableMarkup.push('</td>');
         }
-    tableMarkup.push('</tr>');
+        tableMarkup.push('</tr>');
     }
 
     tableMarkup.push('</table>');
