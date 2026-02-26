@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Crossword</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1>Crossword Puzzle</h1>
+
+<div id="grid"></div>
+
+<div id="clues">
+  <h2>Clues</h2>
+  <div>
+    <strong>Across</strong>
+    <ul>
+      <li>1. Opposite of cold (3)</li>
+      <li>3. Day before today (9)</li>
+    </ul>
+  </div>
+  <div>
+    <strong>Down</strong>
+    <ul>
+      <li>1. Bright star at center of solar system (3)</li>
+      <li>2. Frozen water (3)</li>
+    </ul>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
