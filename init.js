@@ -1,7 +1,7 @@
 const paramsString = window.location.search;
 const searchParams = new URLSearchParams(paramsString);
 const node = searchParams.get("cw");
-if (node == '') {
+if (node === null || node == '') {
     console.error('query param cw not found');
     return;
 }
