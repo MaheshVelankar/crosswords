@@ -37,13 +37,13 @@ function renderCrossword (data) {
     console.log('rowscount', data.puzzle.grid.length);
     var rowsCount = data.puzzle.grid.length;
     for (var i=0; i < rowsCount; i++) {
-    tableMarkup.push('<tr>');
+    tableMarkup.push('<tr class="crossword-row">');
         var row = data.puzzle.grid[i];
         var colsCount = row.length;
         console.log('row', i, 'colcount', colsCount);
         for (var j=0; j < colsCount; j++) {
             var col = row[j];
-            tableMarkup.push('<td>');
+            tableMarkup.push('<td class="crossword-square">');
             tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
