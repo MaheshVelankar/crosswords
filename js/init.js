@@ -43,7 +43,9 @@ function renderCrossword (data) {
         console.log('row', i, 'colcount', colsCount);
         for (var j=0; j < colsCount; j++) {
             var col = row[j];
-            tableMarkup.push('<td class="crossword-square">');
+            var tdClasses = [];
+            tdClasses.push('crossword-square');
+            tableMarkup.push(`<td class="${tdClasses.join(',')}">`);
             tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
