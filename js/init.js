@@ -35,6 +35,8 @@ function renderCrossword (data) {
     tableMarkup.push('</caption>');
     tableMarkup.push('</table>');
 
+    console.log('rowscount', data.puzzle.grid.length);
+
     $cwBox.append($(tableMarkup.join('')));
 
 }
