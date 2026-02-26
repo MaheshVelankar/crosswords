@@ -7,7 +7,7 @@ if (node === null || node == '') {
     node = '_no_data_';
 }
 
-const cwFile = '/data/' + node + '.json';
+const cwFile = 'data/' + node + '.json';
 
 $.getJSON(cwFile)
     .done(function(data) {
