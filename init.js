@@ -4,7 +4,7 @@ const node = searchParams.get("cw");
 
 if (node === null || node == '') {
     console.error('query param cw not found');
-    return;
+    node = '_no_data_';
 }
 
 const cwFile = node + '.json';
