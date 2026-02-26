@@ -45,6 +45,9 @@ function renderCrossword (data) {
             var col = row[j];
             var tdClasses = [];
             tdClasses.push('crossword-square');
+            if (col.fill === null) {
+                tdClasses.push('black');
+            }
             tableMarkup.push(`<td class="${tdClasses.join(',')}">`);
             tableMarkup.push('a');
             tableMarkup.push('</td>');
