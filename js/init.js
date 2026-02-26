@@ -27,8 +27,14 @@ $.getJSON(cwFile)
     });
 
 function renderCrossword (data) {
-   var $cwTable = $('#cw-box table');
-   var $cwCaption = $('<caption>').text('test cw');
-    $cwTable.append($cwCaption);
+    var $cwBox = $('#cw-box');
+    var tableMarkup = [];
+    tableMarkup.push('<table>');
+    tableMarkup.push('<caption>');
+    tableMarkup.push('test cw');
+    tableMarkup.push('</caption>');
+    tableMarkup.push('</table>');
+
+    $cwBox.append($(tableMarkup.join('')));
 
 }
