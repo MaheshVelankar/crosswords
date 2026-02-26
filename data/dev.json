@@ -1,0 +1,1172 @@
+{
+  "id": "cw_26888",
+  "title": "put crossword title here",
+  "author": "put author's name here",
+  "notepad": "Any note you want to add to the crossword page (Simple HTML accepted)",
+  "puzzle": {
+    "grid": [
+      [
+        {
+          "row": 0,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": "मी",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 0
+          },
+          "numeral": 1,
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 3,
+              "col": 0
+            },
+            "left": null,
+            "right": {
+              "row": 0,
+              "col": 1
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": "ठ",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 0
+          },
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 2,
+              "col": 1
+            },
+            "left": {
+              "row": 0,
+              "col": 0
+            },
+            "right": {
+              "row": 0,
+              "col": 2
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": "म",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 0
+          },
+          "down": {
+            "index": 0
+          },
+          "numeral": 2,
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 1,
+              "col": 2
+            },
+            "left": {
+              "row": 0,
+              "col": 1
+            },
+            "right": {
+              "row": 0,
+              "col": 3
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": "सा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 0
+          },
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 2,
+              "col": 3
+            },
+            "left": {
+              "row": 0,
+              "col": 2
+            },
+            "right": {
+              "row": 0,
+              "col": 4
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": "ला",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 0
+          },
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 2,
+              "col": 4
+            },
+            "left": {
+              "row": 0,
+              "col": 3
+            },
+            "right": {
+              "row": 0,
+              "col": 6
+            }
+          }
+        },
+        {
+          "row": 0,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 0,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": "दे",
+          "rbar": false,
+          "bbar": false,
+          "down": {
+            "index": 1
+          },
+          "numeral": 3,
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 1,
+              "col": 6
+            },
+            "left": {
+              "row": 0,
+              "col": 4
+            },
+            "right": null
+          }
+        },
+        {
+          "row": 0,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        }
+      ],
+      [
+        {
+          "row": 1,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 1,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 1,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": "ख",
+          "rbar": false,
+          "bbar": false,
+          "down": {
+            "index": 0
+          },
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 2
+            },
+            "down": {
+              "row": 2,
+              "col": 2
+            },
+            "left": null,
+            "right": {
+              "row": 1,
+              "col": 5
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 1,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 1,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": "नि",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 1
+          },
+          "numeral": 4,
+          "down": {
+            "index": 2
+          },
+          "moves": {
+            "up": null,
+            "down": {
+              "row": 2,
+              "col": 5
+            },
+            "left": {
+              "row": 1,
+              "col": 2
+            },
+            "right": {
+              "row": 1,
+              "col": 6
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": "वा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 1
+          },
+          "down": {
+            "index": 1
+          },
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 6
+            },
+            "down": {
+              "row": 2,
+              "col": 6
+            },
+            "left": {
+              "row": 1,
+              "col": 5
+            },
+            "right": {
+              "row": 1,
+              "col": 7
+            }
+          }
+        },
+        {
+          "row": 1,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": "रा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 1
+          },
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": {
+              "row": 1,
+              "col": 6
+            },
+            "right": null
+          }
+        }
+      ],
+      [
+        {
+          "row": 2,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 2,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": "बि",
+          "rbar": false,
+          "bbar": true,
+          "across": {
+            "index": 2
+          },
+          "numeral": 5,
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 1
+            },
+            "down": {
+              "row": 3,
+              "col": 1
+            },
+            "left": null,
+            "right": {
+              "row": 2,
+              "col": 2
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": "ला",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 2
+          },
+          "down": {
+            "index": 0
+          },
+          "moves": {
+            "up": {
+              "row": 1,
+              "col": 2
+            },
+            "down": {
+              "row": 3,
+              "col": 2
+            },
+            "left": {
+              "row": 2,
+              "col": 1
+            },
+            "right": {
+              "row": 2,
+              "col": 3
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": "व",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 2
+          },
+          "down": {
+            "index": 3
+          },
+          "numeral": 6,
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 3
+            },
+            "down": {
+              "row": 3,
+              "col": 3
+            },
+            "left": {
+              "row": 2,
+              "col": 2
+            },
+            "right": {
+              "row": 2,
+              "col": 4
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": "ल",
+          "rbar": true,
+          "bbar": false,
+          "across": {
+            "index": 2
+          },
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 4
+            },
+            "down": {
+              "row": 4,
+              "col": 4
+            },
+            "left": {
+              "row": 2,
+              "col": 3
+            },
+            "right": {
+              "row": 2,
+              "col": 5
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": "री",
+          "rbar": true,
+          "bbar": false,
+          "down": {
+            "index": 2
+          },
+          "moves": {
+            "up": {
+              "row": 1,
+              "col": 5
+            },
+            "down": {
+              "row": 3,
+              "col": 5
+            },
+            "left": {
+              "row": 2,
+              "col": 4
+            },
+            "right": {
+              "row": 2,
+              "col": 6
+            }
+          }
+        },
+        {
+          "row": 2,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": "ल",
+          "rbar": false,
+          "bbar": false,
+          "down": {
+            "index": 1
+          },
+          "moves": {
+            "up": {
+              "row": 1,
+              "col": 6
+            },
+            "down": {
+              "row": 3,
+              "col": 6
+            },
+            "left": {
+              "row": 2,
+              "col": 5
+            },
+            "right": null
+          }
+        },
+        {
+          "row": 2,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        }
+      ],
+      [
+        {
+          "row": 3,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": "हा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 3
+          },
+          "numeral": 7,
+          "moves": {
+            "up": {
+              "row": 0,
+              "col": 0
+            },
+            "down": null,
+            "left": null,
+            "right": {
+              "row": 3,
+              "col": 1
+            }
+          }
+        },
+        {
+          "row": 3,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": "स",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 3
+          },
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 1
+            },
+            "down": null,
+            "left": {
+              "row": 3,
+              "col": 0
+            },
+            "right": {
+              "row": 3,
+              "col": 2
+            }
+          }
+        },
+        {
+          "row": 3,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": "शी",
+          "rbar": true,
+          "bbar": false,
+          "across": {
+            "index": 3
+          },
+          "down": {
+            "index": 0
+          },
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 2
+            },
+            "down": null,
+            "left": {
+              "row": 3,
+              "col": 1
+            },
+            "right": {
+              "row": 3,
+              "col": 3
+            }
+          }
+        },
+        {
+          "row": 3,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": "ळ",
+          "rbar": false,
+          "bbar": false,
+          "down": {
+            "index": 3
+          },
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 3
+            },
+            "down": {
+              "row": 4,
+              "col": 3
+            },
+            "left": {
+              "row": 3,
+              "col": 2
+            },
+            "right": {
+              "row": 3,
+              "col": 5
+            }
+          }
+        },
+        {
+          "row": 3,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 3,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": "क्ष",
+          "rbar": true,
+          "bbar": false,
+          "down": {
+            "index": 2
+          },
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 5
+            },
+            "down": {
+              "row": 4,
+              "col": 5
+            },
+            "left": {
+              "row": 3,
+              "col": 3
+            },
+            "right": {
+              "row": 3,
+              "col": 6
+            }
+          }
+        },
+        {
+          "row": 3,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": "य",
+          "rbar": false,
+          "bbar": true,
+          "down": {
+            "index": 1
+          },
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 6
+            },
+            "down": {
+              "row": 4,
+              "col": 6
+            },
+            "left": {
+              "row": 3,
+              "col": 5
+            },
+            "right": null
+          }
+        },
+        {
+          "row": 3,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        }
+      ],
+      [
+        {
+          "row": 4,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 4,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 4,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 4,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": "वा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 4
+          },
+          "numeral": 8,
+          "down": {
+            "index": 3
+          },
+          "moves": {
+            "up": {
+              "row": 3,
+              "col": 3
+            },
+            "down": {
+              "row": 5,
+              "col": 3
+            },
+            "left": null,
+            "right": {
+              "row": 4,
+              "col": 4
+            }
+          }
+        },
+        {
+          "row": 4,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": "खा",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 4
+          },
+          "down": {
+            "index": 4
+          },
+          "numeral": 9,
+          "moves": {
+            "up": {
+              "row": 2,
+              "col": 4
+            },
+            "down": {
+              "row": 5,
+              "col": 4
+            },
+            "left": {
+              "row": 4,
+              "col": 3
+            },
+            "right": {
+              "row": 4,
+              "col": 5
+            }
+          }
+        },
+        {
+          "row": 4,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": "ण",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 4
+          },
+          "down": {
+            "index": 2
+          },
+          "moves": {
+            "up": {
+              "row": 3,
+              "col": 5
+            },
+            "down": null,
+            "left": {
+              "row": 4,
+              "col": 4
+            },
+            "right": {
+              "row": 4,
+              "col": 6
+            }
+          }
+        },
+        {
+          "row": 4,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": "णी",
+          "rbar": false,
+          "bbar": false,
+          "across": {
+            "index": 4
+          },
+          "moves": {
+            "up": {
+              "row": 3,
+              "col": 6
+            },
+            "down": null,
+            "left": {
+              "row": 4,
+              "col": 5
+            },
+            "right": null
+          }
+        },
+        {
+          "row": 4,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        }
+      ],
+      [
+        {
+          "row": 5,
+          "col": 0,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 1,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 2,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 3,
+          "circle": false,
+          "rebus": false,
+          "fill": "चा",
+          "rbar": true,
+          "bbar": false,
+          "down": {
+            "index": 3
+          },
+          "moves": {
+            "up": {
+              "row": 4,
+              "col": 3
+            },
+            "down": null,
+            "left": null,
+            "right": {
+              "row": 5,
+              "col": 4
+            }
+          }
+        },
+        {
+          "row": 5,
+          "col": 4,
+          "circle": false,
+          "rebus": false,
+          "fill": "की",
+          "rbar": false,
+          "bbar": false,
+          "down": {
+            "index": 4
+          },
+          "moves": {
+            "up": {
+              "row": 4,
+              "col": 4
+            },
+            "down": null,
+            "left": {
+              "row": 5,
+              "col": 3
+            },
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 5,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 6,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        },
+        {
+          "row": 5,
+          "col": 7,
+          "circle": false,
+          "rebus": false,
+          "fill": null,
+          "rbar": false,
+          "bbar": false,
+          "moves": {
+            "up": null,
+            "down": null,
+            "left": null,
+            "right": null
+          }
+        }
+      ]
+    ],
+    "clues": {
+      "across": [
+        {
+          "text": "मला साठ म्हणून गोंधळण्याआधी मी हे घालून पदार्थ अतिशय चवदार बनवतो",
+          "numeral": 1,
+          "references": null
+        },
+        {
+          "text": "राहण्यास हा हवा । आणि वाहती हवा ॥",
+          "numeral": 4,
+          "references": null
+        },
+        {
+          "text": "बिलात लाव म्हटले की आला राग!",
+          "numeral": 5,
+          "references": null
+        },
+        {
+          "text": "केर काढून हाक मारल्या मारल्या कवितेतल्यासारखी हासतेस!",
+          "numeral": 7,
+          "references": null
+        },
+        {
+          "text": "धातूसाठी खोदलेले क्षेत्र बोलण्यात येते तेव्हा होणारी प्रशंसा",
+          "numeral": 8,
+          "references": null
+        }
+      ],
+      "down": [
+        {
+          "text": "जहाजावरील मजुरापुढे स्वरपट्टीतला एक स्वर काढणे ही सारवासारव झाली!",
+          "numeral": 2,
+          "references": null
+        },
+        {
+          "text": "ठरलेय द्यावयाचे। कडधान्य त्यात साचे। हे धाम ईश्वराचे॥",
+          "numeral": 3,
+          "references": null
+        },
+        {
+          "text": "नेसत्या वस्त्राच्या चुणीला अगदी किंचित वेळ लागेल हे लक्षपूर्वक पाहणे.",
+          "numeral": 4,
+          "references": null
+        },
+        {
+          "text": "अवकाळी फटक्याची खूण अंगावर उमटलेली, तिला बोलणे लागलेले!",
+          "numeral": 6,
+          "references": null
+        },
+        {
+          "text": "अन्नग्रहणाची गळ घातलेली गणवेशाची एक रंगछटा",
+          "numeral": 9,
+          "references": null
+        }
+      ]
+    }
+  },
+  "clue_style": null,
+  "reveal": null
+}
