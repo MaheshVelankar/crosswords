@@ -33,15 +33,24 @@ function renderCrossword (data) {
     tableMarkup.push('<caption>');
     tableMarkup.push('test cw');
     tableMarkup.push('</caption>');
-    tableMarkup.push('</table>');
 
     console.log('rowscount', data.puzzle.grid.length);
     var rowsCount = data.puzzle.grid.length;
     for (var i=0; i < rowsCount; i++) {
+    tableMarkup.push('<tr>');
         var row = data.puzzle.grid[i];
         var colsCount = row.length;
         console.log('row', i, 'colcount', colsCount);
+        for (var j=0; j > colsCount; j++) {A
+            var col = row[j];
+    tableMarkup.push('<td>');
+    tableMarkup.push('a');
+    tableMarkup.push('</td>');
+        }
+    tableMarkup.push('</tr>');
     }
+
+    tableMarkup.push('</table>');
 
     $cwBox.append($(tableMarkup.join('')));
 
