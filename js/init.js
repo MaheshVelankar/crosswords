@@ -40,7 +40,7 @@ function renderCrossword (data) {
     for (var i=0; i < rowsCount; i++) {
         var row = data.puzzle.grid[i];
         var colsCount = row.length;
-        console.log('row', i, 'colcount' colsCount);
+        console.log('row', i, 'colcount', colsCount);
     }
 
     $cwBox.append($(tableMarkup.join('')));
