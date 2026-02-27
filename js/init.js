@@ -55,6 +55,9 @@ function renderCrossword (data) {
                 tdClasses.push('rbar');
             }
             tableMarkup.push(`<td class="${tdClasses.join(' ')}">`);
+            if (col.numeral !== undefined) {
+                tableMarkup.push(`<span class="numeral">${col.numeral}</span>`);
+            }
             //tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
