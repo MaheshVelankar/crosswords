@@ -58,6 +58,11 @@ function renderCrossword (data) {
             if (col.numeral !== undefined) {
                 tableMarkup.push(`<span class="numeral">${col.numeral}</span>`);
             }
+            tableMarkup.push(
+`<input id="sq_${i+1}_${j+1}" type="text" class="phantom crossword-input" tabindex="-1">
+<div class="square-bulk"></div>
+<div class="square-fill"></div>`
+            );
             //tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
