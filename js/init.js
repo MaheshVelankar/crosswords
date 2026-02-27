@@ -48,8 +48,14 @@ function renderCrossword (data) {
             if (col.fill === null) {
                 tdClasses.push('black');
             }
+            if (col.bbar) {
+                tdClasses.push('bbar');
+            }
+            if (col.rbar) {
+                tdClasses.push('rbar');
+            }
             tableMarkup.push(`<td class="${tdClasses.join(',')}">`);
-            tableMarkup.push('a');
+            //tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
         tableMarkup.push('</tr>');
