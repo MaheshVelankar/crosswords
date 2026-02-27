@@ -54,7 +54,7 @@ function renderCrossword (data) {
             if (col.rbar) {
                 tdClasses.push('rbar');
             }
-            tableMarkup.push(`<td class="${tdClasses.join(',')}">`);
+            tableMarkup.push(`<td class="${tdClasses.join(' ')}">`);
             //tableMarkup.push('a');
             tableMarkup.push('</td>');
         }
