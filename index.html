@@ -20,14 +20,70 @@
                     <p class="crossword-notepad">Any note you want to add to the crossword page (Simple HTML accepted)</p>
                 </div>
                 <div class="crossword-controls">
+                    <div class="crossword-buttons">
+                        <p>
+                        उत्तरे:
+                        </p>
+                        <div class="solution-buttons">
+                            <button class="button-clear" data-confirm="उत्तरे खरोखर पुसावयाची आहेत का? ही क्रिया उलटवता येत नाही." title="पुसावी">पुसावी</button>
+                        </div>
+                        <div class="undo-redo">
+                            <button class="button-instructions" data-confirm="" title="वापर/वावर">वापर/वावर</button>
+                        </div>
+                    </div>
                 </div>
                 <div class="crossword-instructions-container">
+                    <div class="crossword-instructions">
+                        <div class="crossword-instructions-square">
+                            <h3>सक्रिय चौकोन</h3>
+                            <dl>
+                                <div>
+                                    <dt>बाणांच्या कळी:</dt>
+                                    <dd>लगतच्या चौकोनावर जा.</dd>
+                                </div>
+                                <div>
+                                    <dt>एंटर/रिटर्न:</dt>
+                                    <dd>पुढला चौकोन.</dd>
+                                </div>
+                                <div>
+                                    <dt>बॅक स्पेस/डिलीट:</dt>
+                                    <dd>सक्रिय चौकोन रिकामा करून आदल्या चौकोनावर जा.</dd>
+                                </div>
+                            </dl>
+                        </div>
+                        <div class="crossword-instructions-clue">
+                            <h3>सक्रिय शोधसूत्र</h3>
+                            <dl>
+                                <div>
+                                    <dt>टॅब:</dt>
+                                    <dd>पुढले शोधसूत्र.</dd>
+                                </div>
+                                <div>
+                                    <dt>शिफ्ट+टॅब:</dt>
+                                    <dd>आदले शोधसूत्र.</dd>
+                                </div>
+                                <div>
+                                    <dt>शिफ्ट+उजवा बाण:</dt>
+                                    <dd>पुढले अनुत्तरित शोधसूत्र.</dd>
+                                </div>
+                                <div>
+                                    <dt>शिफ्ट+डावा बाण:</dt>
+                                    <dd>आदले अनुत्तरित शोधसूत्र.</dd>
+                                </div>
+                                <div>
+                                    <dt>स्पेसबार:</dt>
+                                    <dd>दिशा बदला.</dd>
+                                </div>
+                                <div>
+                                    <dt>एस्केप:</dt>
+                                    <dd>Escape puzzle.</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
                 </div>
             </div>
             <div class="clues-and-congrats">
-
-
-
                 <div id="active-clues" class="active-clues">
                     <style>
 .active-clues .across .numeral:after {

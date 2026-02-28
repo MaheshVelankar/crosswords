@@ -687,7 +687,7 @@
                         dataAttrs.push(`data-numeral="${col.numeral}"`);
                     }
                     tableMarkup.push(`<td class="${tdClasses.join(' ')}" ${dataAttrs.join(' ')}>`);
-                    tableMarkup.push(`<input id="sq_${i+1}_${j+1}" type="text" class="phantom crossword-input" tabindex="-1">`);
+                    tableMarkup.push(`<input id="sq_${i+1}_${j+1}" type="text" lang="mr" class="phantom crossword-input" tabindex="-1">`);
                     if (col.numeral !== undefined) {
                         tableMarkup.push(`<span class="numeral">${col.numeral}</span>`);
                     }
