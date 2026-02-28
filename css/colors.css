@@ -1,0 +1,40 @@
+.show-references .crossword-square.reference,
+.show-references .crossword-clue.reference {
+  background-color: #ccf;
+}
+.crossword-square.highlight,
+.crossword-clue.active {
+  background-color: #8cf;
+}
+
+.crossword-square.active {
+  background-color: #1892ef;
+}
+
+.show-references .active-clues .reference {
+  color: #88c;
+}
+
+.show-errors .crossword-square.error .square-fill,
+.show-errors .crossword-clue.error {
+  color: #a00;
+}
+
+.cryptic .crossword-square.highlight,
+.cryptic .crossword-clue.active {
+  background-color: #dfbf9f;
+}
+
+.cryptic .crossword-square.active {
+  background-color: #c68c53;
+}
+
+.simple .crossword-square.highlight,
+.simplecryptic .crossword-clue.active {
+  background-color: #adc2eb;
+}
+
+.simple .crossword-square.active {
+  background-color: #5c85d6;
+}
+

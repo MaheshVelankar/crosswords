@@ -1,39 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Crossword</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/crossword-grid.css">
-</head>
-<body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Crossword</title>
+        <!-- link rel="stylesheet" href="css/style.css" -->
+        <link rel="stylesheet" href="css/default.css">
+        <link rel="stylesheet" href="css/colors.css">
+        <link rel="stylesheet" href="css/crossword-grid.css">
+    </head>
+    <body>
 
-<h1>Crossword Puzzle made again</h1>
+        <h1>Crossword Puzzle made again</h1>
 
-<div class="crossword-puzzle-frame">
-    <div id="cw-box" class="crossword-puzzle-box">
-    </div>
-</div>
+        <div class="simple crossword field-formatter-text_crossword">
+            <div class="crossword-header">
+                <div class="crossword-details">
+                    <h1 class="crossword-title">put crossword title here</h1>
+                    <h2 class="crossword-author">put author's name here</h2>
+                    <p class="crossword-notepad">Any note you want to add to the crossword page (Simple HTML accepted)</p>
+                </div>
+                <div class="crossword-controls">
+                </div>
+                <div class="crossword-instructions-container">
+                </div>
+            </div>
+            <div class="clues-and-congrats">
 
-<div id="clues">
-  <h2>Clues</h2>
-  <div>
-    <strong>Across</strong>
-    <ul>
-      <li>1. Opposite of cold (3)</li>
-      <li>3. Day before today (9)</li>
-    </ul>
-  </div>
-  <div>
-    <strong>Down</strong>
-    <ul>
-      <li>1. Bright star at center of solar system (3)</li>
-      <li>2. Frozen water (3)</li>
-    </ul>
-  </div>
-</div>
 
-<script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
-<script src="js/init.js"></script>
-</body>
+
+                <div id="active-clues" class="active-clues">
+                    <style>
+.active-clues .across .numeral:after {
+    content: "A";
+}
+       .active-clues .down .numeral:after {
+           content: "D";
+       }
+                    </style>
+                    <div class="active-clues-text"></div>
+                    <div class="express-buttons">
+                        <button class="prev-clue-express clue-express" id="prev-clue-express" title="Previous unsolved clue"></button>
+                        <button class="next-clue-express clue-express" id="next-clue-express" title="Next unsolved clue"></button>
+                    </div>
+                </div>
+                <div class="crossword-congrats">congrats</div>
+
+
+
+
+
+
+
+            </div>
+            <div class="crossword-puzzle clearfix">
+                <div class="crossword-puzzle-frame">
+                    <div id="cw-box" class="crossword-puzzle-box">
+                    </div>
+                </div>
+                <div class="crossword-clues across">
+                    <div class="crossword-clues-header">
+                        <button class="crossword-clue-change prev" title="Prev clue" data-dir="across" data-clue-change="-1"></button>
+                        <button class="crossword-dir-change" data-dir="across">Across</button>
+                        <button class="crossword-clue-change next" title="Next clue" data-dir="across" data-clue-change="1"></button>
+                    </div>
+                </div>
+                <div class="crossword-clues down">
+                    <div class="crossword-clues-header">
+                        <button class="crossword-clue-change prev" title="Prev clue" data-dir="down" data-clue-change="-1"></button>
+                        <button class="crossword-dir-change" data-dir="down">Down</button>
+                        <button class="crossword-clue-change next" title="Next clue" data-dir="down" data-clue-change="1"></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+        <div id="clues">
+            <h2>Clues</h2>
+            <div>
+                <strong>Across</strong>
+                <ul>
+                    <li>1. Opposite of cold (3)</li>
+                    <li>3. Day before today (9)</li>
+                </ul>
+            </div>
+            <div>
+                <strong>Down</strong>
+                <ul>
+                    <li>1. Bright star at center of solar system (3)</li>
+                    <li>2. Frozen water (3)</li>
+                </ul>
+            </div>
+        </div>
+
+        <script src="https://code.jquery.com/jquery-4.0.0.min.js"></script>
+        <script src="js/translit.js"></script>
+        <script src="js/once.min.js"></script>
+        <script src="js/init.js"></script>
+        <script src="js/classes.js"></script>
+        <script src="js/crossword.js"></script>
+        <script src="js/crossword-txt-writer.js"></script>
+    </body>
 </html>

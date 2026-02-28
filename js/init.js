@@ -1,76 +1,39 @@
-const paramsString = window.location.search;
-const searchParams = new URLSearchParams(paramsString);
-var node = searchParams.get("cw");
+window.drupalSettings = {
+    "crossword" : {
+        "selector": ".crossword",
+        "data": {}
+    }
+};
+window.Drupal = { behaviors: {}, locale: {} };
+//var once = function(){};
 
-if (node === null || node == '') {
-    console.error('query param cw not found');
-    node = '_no_data_';
-}
+(function ($, Drupal, once, drupalSettings) {
+    const paramsString = window.location.search;
+    const searchParams = new URLSearchParams(paramsString);
+    var node = searchParams.get("cw");
 
-const cwFile = 'data/' + node + '.json';
-
-$.getJSON(cwFile)
-    .done(function(data) {
-        // Success: data is the parsed JSON object
-        renderCrossword (data);
-        console.log( "$ JSON Data received, name is " + data.name);
-        //console.log("Success:", data);
-    })
-    .fail(function(jqXHR, textStatus, errorThrown) {
-        // Error: this function is called if the request fails
-        console.error("Error:", textStatus, errorThrown);
-        console.log("Response Text:", jqXHR.responseText); // Contains the raw response text
-    })
-    .always(function() {
-        // This function will always run, regardless of success or failure
-        console.log("Request complete.");
-    });
-
-function renderCrossword (data) {
-    var $cwBox = $('#cw-box');
-    var tableMarkup = [];
-    tableMarkup.push('<table class="crossword-grid">');
-    tableMarkup.push('<caption>');
-    tableMarkup.push('test cw');
-    tableMarkup.push('</caption>');
-
-    console.log('rowscount', data.puzzle.grid.length);
-    var rowsCount = data.puzzle.grid.length;
-    for (var i=0; i < rowsCount; i++) {
-    tableMarkup.push('<tr class="crossword-row">');
-        var row = data.puzzle.grid[i];
-        var colsCount = row.length;
-        console.log('row', i, 'colcount', colsCount);
-        for (var j=0; j < colsCount; j++) {
-            var col = row[j];
-            var tdClasses = [];
-            tdClasses.push('crossword-square');
-            if (col.fill === null) {
-                tdClasses.push('black');
-            }
-            if (col.bbar) {
-                tdClasses.push('bbar');
-            }
-            if (col.rbar) {
-                tdClasses.push('rbar');
-            }
-            tableMarkup.push(`<td class="${tdClasses.join(' ')}">`);
-            if (col.numeral !== undefined) {
-                tableMarkup.push(`<span class="numeral">${col.numeral}</span>`);
-            }
-            tableMarkup.push(
-`<input id="sq_${i+1}_${j+1}" type="text" class="phantom crossword-input" tabindex="-1">
-<div class="square-bulk"></div>
-<div class="square-fill"></div>`
-            );
-            //tableMarkup.push('a');
-            tableMarkup.push('</td>');
-        }
-        tableMarkup.push('</tr>');
+    if (node === null || node == '') {
+        console.error('query param cw not found');
+        node = '_no_data_';
     }
 
-    tableMarkup.push('</table>');
+    const cwFile = 'data/' + node + '.json';
 
-    $cwBox.append($(tableMarkup.join('')));
+    $.getJSON(cwFile)
+        .done(function(data) {
+            // Success: data is the parsed JSON object
+            drupalSettings.crossword.data = data;
+            Drupal.behaviors.crossword.attach();
+            //console.log("Success:", data);
+        })
+        .fail(function(jqXHR, textStatus, errorThrown) {
+            // Error: this function is called if the request fails
+            console.error("Error:", textStatus, errorThrown);
+            console.log("Response Text:", jqXHR.responseText); // Contains the raw response text
+        })
+        .always(function() {
+            // This function will always run, regardless of success or failure
+            console.log("Request complete.");
+        });
 
-}
+})(jQuery, Drupal, once, drupalSettings);
