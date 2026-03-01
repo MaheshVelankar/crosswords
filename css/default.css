@@ -1,3 +1,7 @@
+.error {
+  color: #f00;
+}
+
 .crossword {
   position: relative;
 }
