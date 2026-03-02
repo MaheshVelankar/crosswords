@@ -731,10 +731,7 @@
                 dwnCluesMarkup.push('</li>');
             }
             $('.crossword-clues.down').append($(dwnCluesMarkup.join('')));
-
-
         },
-
         rebusEntryActive: function(letter) {
             return $('.rebus-entry').prop('checked');
         },
