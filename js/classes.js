@@ -745,3 +745,4 @@
   }
 
 })(jQuery, Drupal, once, drupalSettings);
+console.log('classes.js loaded');

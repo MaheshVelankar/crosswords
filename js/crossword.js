@@ -743,3 +743,4 @@
         },
     }
 })(jQuery, Drupal, once, drupalSettings);
+console.log('crossword.js loaded');

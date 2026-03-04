@@ -1,4 +1,8 @@
 window.drupalSettings = {
+    "vkbd":{
+        "container_selector": "#vkbd_container",
+        "size": 2
+    },
     "crossword" : {
         "selector": ".crossword",
         "data": {}
@@ -22,6 +26,7 @@ window.Drupal = { behaviors: {}, locale: {} };
     $.getJSON(cwFile)
         .done(function(data) {
             // Success: data is the parsed JSON object
+            Drupal.behaviors.vkbd.attach();
             drupalSettings.crossword.data = data;
             Drupal.behaviors.crossword.attach();
             //console.log("Success:", data);
@@ -37,3 +42,4 @@ window.Drupal = { behaviors: {}, locale: {} };
         });
 
 })(jQuery, Drupal, once, drupalSettings);
+console.log('init.js loaded');
