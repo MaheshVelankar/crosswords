@@ -560,7 +560,6 @@ var VKI_attach, VKI_close;
      *
      */
     this.VKI_buildKeys = function() {
-        console.log('in buildkeys');
         this.VKI_shift = this.VKI_shiftlock = this.VKI_altgr = this.VKI_altgrlock = this.VKI_dead = false;
         let container = this.VKI_keyboard.tBodies[0].getElementsByTagName('div')[0];
         for (let t = container.getElementsByTagName('table'), x = t.length - 1; x >= 0; x--)

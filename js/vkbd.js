@@ -1,6 +1,14 @@
 (function ($, Drupal, once, drupalSettings) {
     Drupal.behaviors.vkbd = {
         attach: function (context, settings) {
+            var selector = settings.vkbd.container_id;
+            var kbdContElems = once('keyboard', `#${selector}`);
+            Drupal.vkboard = new Drupal.vkbd(
+                kbdContElems[0],
+                settings.vkbd,
+            );
+        },
+        battach: function (context, settings) {
             Drupal.vkbd = {};
             var selector = drupalSettings.vkbd.container_selector;
             console.log('found one keyboard site');
@@ -42,28 +50,110 @@
                 tableMarkup = [];
                 tableClasses = [];
                 if (lyt.length <= Drupal.vkbd.keyCenter) tableClasses.push('keyboardInputCenter');
-                var tableClassAttr = tableClasses.length >0? `class="${tableClasses.join(' ')}`:'';
+                var tableClassAttr = tableClasses.length >0? `class="${tableClasses.join(' ')}"`:'';
                 tableMarkup.push(`<table ${tableClassAttr}>`);
                 tableMarkup.push(`<tbody>`);
                 tableMarkup.push(`<tr>`);
                 for (let y = 0, lkey; lkey = lyt[y++];) {
-                    console.log(lkey[0], lkey[1]);
                     var tdClasses = [];
                     if (lyt.length > Drupal.vkbd.keyCenter && y == lyt.length) tdClasses.push('last');
-                    var tdClassAttr = tdClasses.length >0? `class="${tdClasses.join(' ')}""`:'';
+                    if (lkey[0] == ' ' || lkey[1] == ' ') tdClasses.push('space');
+                    var tdClassAttr = tdClasses.length >0? `class="${tdClasses.join(' ')}"`:'';
                     tableMarkup.push(`<td ${tdClassAttr}>`);
                     tableMarkup.push(lkey[0] || '\xa0');
-                    console.log('pushed', lkey[0], 'tdclass', tdClassAttr);
                     tableMarkup.push(`</td>`);
+                    //console.log('pushed', `<td ${tdClassAttr}>`);
+                    //console.log('pushed <'+ lkey[0] + '>');
+                    //console.log('pushed', `</td>` );
                 }
                 tableMarkup.push(`</tr>`);
                 tableMarkup.push(`</tbody>`);
                 tableMarkup.push(`</table>`);
                 keyContainer.append($(tableMarkup.join('')));
-                console.log('-------');
             }
         }
-    }
+    };
+    Drupal.vkbd = function (kbdContElem, vkbdSettings){
+        const self = this;
+        const $kbdContainer = $(kbdContElem);
+
+        this.keyCenter = 5; //center the row if keys less than this
+        this.layout = [
+            [['`', '~'], ['1', '!'], ['2', '@'], ['3', '#'], ['4', '$'], ['5', '%'], ['6', '^'], ['7', '&'], ['8', '*'], ['9', '('], ['0', ')'], ['-', '_'], ['=', '+'], ['Bksp', 'Bksp']],
+            [['Tab', 'Tab'], ['q', 'Q'], ['w', 'W'], ['e', 'E'], ['r', 'R'], ['t', 'T'], ['y', 'Y'], ['u', 'U'], ['i', 'I'], ['o', 'O'], ['p', 'P'], ['[', '{'], [']', '}'], ['\\', '|']],
+            [['Caps', 'Caps'], ['a', 'A'], ['s', 'S'], ['d', 'D'], ['f', 'F'], ['g', 'G'], ['h', 'H'], ['j', 'J'], ['k', 'K'], ['l', 'L'], [';', ':'], ['\'', '"'], ['Enter', 'Enter']],
+            [['Shift', 'Shift'], ['z', 'Z'], ['x', 'X'], ['c', 'C'], ['v', 'V'], ['b', 'B'], ['n', 'N'], ['m', 'M'], [',', '<'], ['.', '>'], ['/', '?'], ['Shift', 'Shift']],
+            [[' ', ' ']]
+        ];
+        this.shift = this.shiftlock = false;
+
+        this.keyClick = function() {
+            character = $(this).text();
+            console.log('keyClick visited with ', character);
+            self.keyPublish(character);
+            self.modify('');
+        };
+        this.keyPublish = function(text) {
+            console.log('keyPublish will publish ', text);
+        };
+        this.modify = function(type) {
+            switch (type) {
+                case 'Caps': this.shift = 0; this.shiftlock = !this.shiftlock; break;
+                case 'Shift': this.shift = !this.shift;
+            }
+            let vchar = 0;
+            if (!this.shift != !this.shiftlock) vchar += 1;
+            console.log('modify will modify ', type);
+            //for (let t = this.keyboard.tBodies[0].getElementsByTagName('div')[0].getElementsByTagName('table'), x = 0, tds; x < t.length; x++)
+            for (let t = this.keyboard.find('div.keyframe table'), x = 0, tds; x < t.length; x++) {
+                tds = $(t[x]).find('td');
+                for (let y = 0, lkey; y < tds.length; y++){
+                    $(tds[y]).removeClass();
+                    lkey = this.layout[x][y];
+                    console.log('lkey', lkey);
+                    switch (lkey[1]) {
+
+                    }
+                }
+            }
+        };
+        this.prepareKbd = function () {
+            var $table = $('<table/>', {
+                "id": "keyboardInputMaster"
+            }).appendTo($kbdContainer).addClass(`keyboardInputSize${vkbdSettings.size}`);
+            $table.addClass(`tryout`);
+            var $tbody = $('<tbody/>').appendTo($table);
+            var $tr = $('<tr/>').appendTo($tbody);
+            var $td = $('<td/>').appendTo($tr);
+            var $keyFrameDiv = $('<div/>').appendTo($td).addClass('keyframe');
+            //var $keyFrameDiv = $('<div/>').appendTo($td);
+            return $table;
+        };
+        this.buildKeys = function () {
+            this.shift = this.shiftlock = false;
+            var $keyFrameDiv = this.keyboard.find('div.keyframe').first();
+            //add keys
+            for (let x = 0, lyt; lyt = this.layout[x++];){
+                $table =$('<table/>').appendTo($keyFrameDiv);
+                if (lyt.length <= this.keyCenter) $table.addClass('keyboardInputCenter');
+                var $tbody = $('<tbody/>').appendTo($table);
+                $tr = $('<tr/>').appendTo($tbody);
+                for (let y = 0, lkey; lkey = lyt[y++];) {
+                    $td = $('<td/>').appendTo($tr);
+                    if (lyt.length > this.keyCenter && y == lyt.length) $td.addClass('last');
+                    if (lkey[0] == ' ' || lkey[1] == ' ') $td.addClass('space');
+                    $td.text(lkey[0] || '\xa0');
+                    switch (lkey[1]) {
+                        default:
+                            $td.on('click', self.keyClick);
+                    }
+                }
+            }
+        };
+
+        self.keyboard = self.prepareKbd();
+        self.buildKeys();
+    };
 })(jQuery, Drupal, once, drupalSettings);
 console.log('vkbd.js loaded');
 
