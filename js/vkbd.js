@@ -229,6 +229,7 @@
 
         self.keyboard = self.prepareKbd();
         self.buildKeys();
+        $kbdContainer.addClass('keyboard_frame');
     };
 })(jQuery, Drupal, once, drupalSettings);
 console.log('vkbd.js loaded');

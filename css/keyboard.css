@@ -1,3 +1,9 @@
+.keyboard_frame {
+    position: fixed;
+    bottom:0;
+    left:0;
+    z-index: 1000;
+}
 #keyboardInputMaster_try {
 }
 #keyboardInputMaster {
