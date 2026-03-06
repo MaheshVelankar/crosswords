@@ -77,6 +77,9 @@
         const self = this;
         const $kbdContainer = $(kbdContElem);
 
+        this.target = null;
+        this.keyClicked = '';
+
         this.keyCenter = 5; //center the row if keys less than this
         this.layout = [
             [['`', '~'], ['1', '!'], ['2', '@'], ['3', '#'], ['4', '$'], ['5', '%'], ['6', '^'], ['7', '&'], ['8', '*'], ['9', '('], ['0', ')'], ['-', '_'], ['=', '+'], ['Bksp', 'Bksp']],
@@ -87,14 +90,59 @@
         ];
         this.shift = this.shiftlock = false;
 
-        this.keyClick = function() {
+        this.setTarget = function(elem) {
+            this.target = elem;
+        };
+
+        this.setKeyClicked = function (k) {
+            self.keyClicked = k;
+        };
+
+        this.getKeyClicked = function () {
+            return self.keyClicked;
+        };
+
+        this.keyClick = function(c) {
+            let character = '\xa0';
             character = $(this).text();
-            console.log('keyClick visited with ', character);
+            self.keyClicked = character;
             self.keyPublish(character);
+            if (self.shift) self.modify('Shift');
             self.modify('');
         };
         this.keyPublish = function(text) {
-            console.log('keyPublish will publish ', text);
+            console.log('publish text ', text);
+            var charCode = text=='\n'?13:text.charCodeAt(0);
+/*
+            var pressEvent = jQuery.Event("keypress", {
+                keyCode: charCode, // For compatibility
+                which: charCode    // jQuery normalizes to 'which' property
+            });
+            $(self.target).trigger(pressEvent);
+*/
+            //$(self.target).trigger('focus');
+
+            let keyevent = charCode==13?$.Event('keydown'):$.Event('keypress');
+            keyevent.which = charCode;
+            if (charCode == 13) {
+                // Create a new KeyboardEvent
+                const customKeydownEvent = new KeyboardEvent('keydown', {
+                    key: 'Enter', // Specify the key you want to simulate (e.g., 'Enter', 'ArrowRight', 'a')
+                    code: 'Enter', // Use 'code' for the physical key
+                    keyCode: 13, // keyCode is deprecated but useful for broader compatibility
+                    bubbles: true, // Key events bubble up the DOM
+                    cancelable: true // Event can be cancelled
+                });
+
+                // Dispatch the custom keydown event to the document
+                document.dispatchEvent(customKeydownEvent);
+                /*
+                    document.body.focus();
+                $(document).trigger(keyevent);
+                */
+            }else {
+                $(self.target).trigger(keyevent);
+            }
         };
         this.modify = function(type) {
             switch (type) {
@@ -103,17 +151,28 @@
             }
             let vchar = 0;
             if (!this.shift != !this.shiftlock) vchar += 1;
-            console.log('modify will modify ', type);
             //for (let t = this.keyboard.tBodies[0].getElementsByTagName('div')[0].getElementsByTagName('table'), x = 0, tds; x < t.length; x++)
             for (let t = this.keyboard.find('div.keyframe table'), x = 0, tds; x < t.length; x++) {
                 tds = $(t[x]).find('td');
                 for (let y = 0, lkey; y < tds.length; y++){
                     $(tds[y]).removeClass();
                     lkey = this.layout[x][y];
-                    console.log('lkey', lkey);
                     switch (lkey[1]) {
-
+                        case 'Alt':
+                        case 'Shift':
+                            if (this.shift) $(tds[y]).addClass('pressed');
+                            break;
+                        case 'Caps':
+                            if (this.shiftlock) $(tds[y]).addClass('pressed');
+                            break;
+                        case 'Enter': case 'Bksp': break;
+                        default:
+                            if (type) {
+                                $(tds[y]).text(lkey[vchar] || '\xa0');
+                            }
                     }
+                    if (y == tds.length - 1 && tds.length > this.keyCenter) $(tds[y]).addClass('last');
+                    if (lkey[0] == ' ' || lkey[1] == ' ') $(tds[y]).addClass('space');
                 }
             }
         };
@@ -140,10 +199,27 @@
                 $tr = $('<tr/>').appendTo($tbody);
                 for (let y = 0, lkey; lkey = lyt[y++];) {
                     $td = $('<td/>').appendTo($tr);
+                    $td.addClass('vkbd_key');
                     if (lyt.length > this.keyCenter && y == lyt.length) $td.addClass('last');
                     if (lkey[0] == ' ' || lkey[1] == ' ') $td.addClass('space');
                     $td.text(lkey[0] || '\xa0');
+                    $td.on('mousedown', function(e) {e.preventDefault();});
                     switch (lkey[1]) {
+                        case 'Caps': case 'Shift':
+                            $td.on('click', (function(type) {
+                                return function() {
+                                    self.modify(type);
+                                    return false;
+                                }
+                            })(lkey[1]));
+                            break;
+                        case 'Enter':
+                            $td.on('click', function () {
+                                console.log('Enter clicked');
+                                self.keyPublish("\n");
+                                return true;
+                            });
+                            break;
                         default:
                             $td.on('click', self.keyClick);
                     }

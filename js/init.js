@@ -27,7 +27,19 @@ window.Drupal = { behaviors: {}, locale: {} };
         .done(function(data) {
             // Success: data is the parsed JSON object
             Drupal.behaviors.vkbd.attach(document, drupalSettings);
+            $('input').each(function(idx, elem) {
+                console.log('elem id', $(elem).attr('id'));
+                $(elem).cwtxtwriter({Crossword : null});
+            });
+            $('input').on('focus', function() {
+                console.log('focus on', $(this).attr('id'));
+                Drupal.vkboard.setTarget(this);
+            });
+            $('input').on('keypress', function() {
+                console.log('keypress on', $(this).attr('id'));
+            });
             drupalSettings.crossword.data = data;
+            drupalSettings.crossword.vkbd = Drupal.vkboard;
             Drupal.behaviors.crossword.attach();
             //console.log("Success:", data);
         })

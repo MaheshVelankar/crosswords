@@ -6,6 +6,7 @@
             once('crossword-init', selector).forEach(function(crossword){
                 var $crossword = $(crossword);
                 var data = drupalSettings.crossword.data;
+                var vkbd = drupalSettings.crossword.vkbd;
                 Drupal.behaviors.crossword.renderCrossword($crossword, data);
                 // Handle persisting revealed status.
                 //data.revealed = Drupal.behaviors.crossword.isRevealed(data.id);
@@ -23,7 +24,7 @@
                 Drupal.behaviors.crossword.connectSquares($crossword, data);
                 Drupal.behaviors.crossword.addInputHandlers($crossword, data);
                 Drupal.behaviors.crossword.addSquareExitHandlers($crossword, data);
-                Drupal.behaviors.crossword.addDevIme($crossword, data);
+                Drupal.behaviors.crossword.addDevIme($crossword, data, vkbd);
                 Drupal.behaviors.crossword.addKeydownHandlers($crossword, data);
                 Drupal.behaviors.crossword.addClickHandlers($crossword, data);
                 //Drupal.behaviors.crossword.addKeypressHandlers($crossword, data);
@@ -215,14 +216,14 @@
                 $(this).val("");
             });
         },
-        addDevIme: function($crossword, data) {
+        addDevIme: function($crossword, data, vkbd) {
             var Crossword = $crossword.data("Crossword");
             var data = drupalSettings.crossword.data;
             var grid = data.puzzle.grid;
             for (var row_index = 0; row_index < grid.length; row_index++) {
                 for (var col_index = 0; col_index < grid[row_index].length; col_index++) {
                     var input_id_locator = '#sq_' + (row_index + 1) + '_' + (col_index + 1);
-                    $(input_id_locator).cwtxtwriter({Crossword : Crossword});
+                    $(input_id_locator).cwtxtwriter({Crossword : Crossword, vkbd : vkbd});
                 }
             }
             Crossword.focus();

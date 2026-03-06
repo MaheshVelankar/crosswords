@@ -18,6 +18,7 @@
       editmode = 'dev',
       lastEvent = '',
       Crossword = options.Crossword,
+      vkbd = options.vkbd,
       splitRe = /ॐ|[ऄ-औॠॡॲ-ॷꣾ][ऀ-ं]*|(ऱ?‍?्)?([क-हक़-फ़य़-ॿ][◌़]?[◌्](‍|‌)?)*[ऄ-औॠॡॲ-ॷꣾक-हक़-फ़य़-ॿ][◌़]?([◌्]|[ऺऻा-ौॎॏ]?[ऀ-ं]*)/gu;
 
     var lastWhich;
@@ -77,7 +78,8 @@
     }
   };
 
-    var clearEditRanges = function () {
+    var clearEditRanges = function (src) {
+        console.log('clearEditRanges from ', src);
       romstring='';
       handleTipDisplay('');
       es = false;
@@ -113,34 +115,66 @@
     };
 
 
-    var blur = function(e) {
-      //console.log('in blur of ' + thisBox.attr('id'));
-      //console.log('id: ' + thisBox.attr('id') + ', lastEvent: ' + lastEvent);
-      if (lastEvent === 'input') {
-//        sendSquareExitEvent();
+      var blur = function(e) {
+
+               var InputTarget =  $(e.relatedTarget).prop("tagName"); // GET ID Element
+                console.log('in blur of ' + thisBox.attr('id'), ' targetted to ', InputTarget);
+
+          var activeTag = document.activeElement.tagName;
+              //console.log('active tag', activeTag);
+        /*
+        if (vkbd !== null) {
+            var vk = vkbd.keyClicked;
+            vkbd.keyClicked = '';
+            if (vk != ''){
+                //console.log('in blur of ' + thisBox.attr('id'), 'vkbd key', vk, ' will return');
+                e.preventDefault();
+                return;
+            }
+        }
+        */
+          /*
+          var $focusedElement = $(document.activeElement);
+          if ($focusedElement !== undefined) {
+              console.log('focused on '. $focusedElement.prop('tagName'));
+          }
+          if ($focusedElement.hasClass('vkbd_key')) {
+              console.log('in vkbd');
+              return;
+          }
+          */
+          //console.log('id: ' + thisBox.attr('id') + ', lastEvent: ' + lastEvent);
+          if (lastEvent === 'input') {
+              //        sendSquareExitEvent();
+          }
+          if (Crossword !== null) {
+              var activeSq = Crossword.activeSquare;
+              e.target.value='';
+              if (activeSq.hasError()) {
+                  activeSq['$square'].trigger('crossword-error');
+              }
+          }
+          lastEvent = 'blur';
+          clearEditRanges('blur ' + thisBox.attr('id'));
       }
-      var activeSq = Crossword.activeSquare;
-      e.target.value='';
-      if (activeSq.hasError()) {
-        activeSq['$square'].trigger('crossword-error');
-      }
-      lastEvent = 'blur';
-      clearEditRanges();
-    }
 
     var focus = function(e) {
+          //console.log('in focus of ' + thisBox.attr('id'));
         lastEvent = 'focus';
-        clearEditRanges();
+        if (vkbd !== null) {
+            vkbd.setTarget(this);
+        }
+        clearEditRanges('focus' + thisBox.attr('id'));
     }
 
     var focusout = function(e) {
       //console.log('in focusout of ' + thisBox.attr('id'));
-        clearEditRanges();
+        clearEditRanges('focusout');
     }
 
     var click = function(e) {
         lastEvent = 'click';
-        clearEditRanges();
+        clearEditRanges('click');
     };
 
     var keypress = function(e) {
@@ -148,14 +182,14 @@
       handleTipPos();
 
       if (e.which == 13 || e.which == 60 || e.which == 62 || e.which == 0) {
-        clearEditRanges();
+        clearEditRanges('keypress ret');
         //processInput();
         //sendSquareExitEvent();
         return;
       }
 
       if (e.which == 32) {
-        clearEditRanges();
+        clearEditRanges('keypress space');
         return;
       }
 
@@ -183,6 +217,12 @@
     };
 
     var keydown = function(e) {
+        console.log('in keydown which', e.which);
+        if (e.which == 13) {
+            e.stopPropagation();
+            const newEvent = new KeyboardEvent(e.type, e);
+            document.dispatchEvent(newEvent);
+        }
         lastEvent = 'keydown';
       if (editmode != 'dev') {
         return;
@@ -195,7 +235,7 @@
           e.preventDefault();
         }
         else {
-          clearEditRanges();
+          clearEditRanges('back');
           processInput();
         }
         return;
@@ -221,7 +261,9 @@
       thisTF.value = s1 + s2 + s3;
       thisTF.setSelectionRange ( selStart + devlen, selStart + devlen );
       handleTipDisplay(romstring);
+        if (Crossword !== null) {
       sendInputEvent();
+        }
     };
 
     var sendInputEvent = function() {
