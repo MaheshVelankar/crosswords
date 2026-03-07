@@ -35,10 +35,16 @@
 }
 
 .crossword .crossword-clues {
-  box-sizing: border-box;
-  width: 50%;
-  float: left;
-  padding-top: 1em;
+    /* orig
+    box-sizing: border-box;
+    width: 50%;
+    float: left;
+    padding-top: 1em;
+     */
+
+    flex:1;
+/*    display:flex;*/
+    gap:20px;
 }
 
 .crossword .crossword-clues.across {
@@ -131,8 +137,10 @@
 }
 /* Make active clues sticky in default formatter display */
 .crossword .clues-and-congrats {
+/*
   position: sticky;
   position: -webkit-sticky;
+*/
   top: 0;
   left: 0;
   margin-bottom: 1em;

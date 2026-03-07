@@ -2,6 +2,7 @@
 
     Drupal.behaviors.crossword = {
         attach: function (context, settings) {
+            console.log('in cw attach');
             var selector = drupalSettings.crossword.selector;
             once('crossword-init', selector).forEach(function(crossword){
                 var $crossword = $(crossword);
@@ -648,6 +649,7 @@
                 });
         },
         renderCrossword: function ($crossword, data) {
+            console.log('will render');
             var $cwBox = $('#cw-box');
             var tableMarkup = [];
             tableMarkup.push('<table class="crossword-grid">');

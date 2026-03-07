@@ -5,60 +5,12 @@
         <title>Crossword</title>
         <!-- link rel="stylesheet" href="css/style.css" -->
         <link rel="stylesheet" href="css/default.css">
-        <link rel="stylesheet" href="css/layout.css">
         <link rel="stylesheet" href="css/colors.css">
         <link rel="stylesheet" href="css/crossword-grid.css">
         <link rel="stylesheet" href="css/keyboard.css">
     </head>
     <body>
-        <div class="page crossword">
-            <header class="crossword-controls">
-                <h1 class="title">Daily Crossword</h1>
-                <div class="puzzle-picker">
-                    <label>Select Puzzle:</label>
-                    <select>
-                        <option>Sample Puzzle</option>
-                        <option>Marathi Crossword</option>
-                        <option>Cryptic #1</option>
-                    </select>
-                </div>
-            </header>
-            <div id="active-clues" class="current-clue active-clues">
-                <style>
-.active-clues .across .numeral:after {
-    content: "A";
-}
-       .active-clues .down .numeral:after {
-           content: "D";
-       }
-                </style>
-                <div class="active-clues-text"></div>
-                <div class="express-buttons">
-                    <button class="prev-clue-express clue-express" id="prev-clue-express" title="Previous unsolved clue"></button>
-                    <button class="next-clue-express clue-express" id="next-clue-express" title="Next unsolved clue"></button>
-                </div>
-            </div>
-            <div class="game-layout">
-                <div class="crossword-puzzle-frame">
-                    <div id="cw-box" class="crossword-puzzle-box">
-                    </div>
-                </div>
-                <div class="clue-area">
-                    <div class="crossword-clues clue-section across">
-                        <button class="crossword-clue-change prev" title="Prev clue" data-dir="across" data-clue-change="-1"></button>
-                        <button class="crossword-dir-change" data-dir="across">Across</button>
-                        <button class="crossword-clue-change next" title="Next clue" data-dir="across" data-clue-change="1"></button>
-                    </div>
-                    <div class="crossword-clues clue-section down">
-                        <button class="crossword-clue-change prev" title="Prev clue" data-dir="down" data-clue-change="-1"></button>
-                        <button class="crossword-dir-change" data-dir="down">Down</button>
-                        <button class="crossword-clue-change next" title="Next clue" data-dir="down" data-clue-change="1"></button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-<!--
         <h1>Crossword Puzzle made again</h1>
 
         <div class="simple crossword field-formatter-text_crossword">
@@ -173,7 +125,10 @@
         </div>
         <div id="vkbd_container">
         </div>
- -->
+        <input id="input_1" type="text"><br>
+        <input id="input_2" type="text"><br>
+        <input id="input_3" type="text"><br>
+        <input id="input_4" type="text"><br>
 
 
 
