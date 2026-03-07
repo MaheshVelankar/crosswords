@@ -1,8 +1,10 @@
 .keyboard_frame {
-    position: fixed;
+    /*position: fixed;
     bottom:0;
     left:0;
     z-index: 1000;
+    */
+    display: none;
 }
 #keyboardInputMaster_try {
 }
@@ -289,3 +291,17 @@
   cursor:pointer;
   max-height:1.3em;
 }
+
+/* MOBILE BEHAVIOR */
+
+@media (max-width:900px){
+    .keyboard_frame {
+        display:flex;
+        position: fixed;
+        bottom:0;
+        left:0;
+        z-index: 1000;
+    }
+}
+
+
