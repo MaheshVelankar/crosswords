@@ -81,12 +81,17 @@
         this.keyClicked = '';
 
         this.keyCenter = 5; //center the row if keys less than this
-        this.layout = [
+        this.layout_complete = [
             [['`', '~'], ['1', '!'], ['2', '@'], ['3', '#'], ['4', '$'], ['5', '%'], ['6', '^'], ['7', '&'], ['8', '*'], ['9', '('], ['0', ')'], ['-', '_'], ['=', '+'], ['Bksp', 'Bksp']],
             [['Tab', 'Tab'], ['q', 'Q'], ['w', 'W'], ['e', 'E'], ['r', 'R'], ['t', 'T'], ['y', 'Y'], ['u', 'U'], ['i', 'I'], ['o', 'O'], ['p', 'P'], ['[', '{'], [']', '}'], ['\\', '|']],
             [['Caps', 'Caps'], ['a', 'A'], ['s', 'S'], ['d', 'D'], ['f', 'F'], ['g', 'G'], ['h', 'H'], ['j', 'J'], ['k', 'K'], ['l', 'L'], [';', ':'], ['\'', '"'], ['Enter', 'Enter']],
             [['Shift', 'Shift'], ['z', 'Z'], ['x', 'X'], ['c', 'C'], ['v', 'V'], ['b', 'B'], ['n', 'N'], ['m', 'M'], [',', '<'], ['.', '>'], ['/', '?'], ['Shift', 'Shift']],
             [[' ', ' ']]
+        ];
+        this.layout = [
+            [['q', 'Q'], ['w', 'W'], ['e', 'E'], ['r', 'R'], ['t', 'T'], ['y', 'Y'], ['u', 'U'], ['i', 'I'], ['o', 'O'], ['p', 'P']],
+            [['a', 'A'], ['s', 'S'], ['d', 'D'], ['f', 'F'], ['g', 'G'], ['h', 'H'], ['j', 'J'], ['k', 'K'], ['l', 'L'], ['↩', '↩']],
+            [['⇧', '⇧'], ['z', 'Z'], ['x', 'X'], ['c', 'C'], ['v', 'V'], ['b', 'B'], ['n', 'N'], ['m', 'M'], ['⌫', '⌫']]
         ];
         this.shift = this.shiftlock = false;
 
@@ -106,13 +111,14 @@
             let character = '\xa0';
             character = $(this).text();
             self.keyClicked = character;
+            console.log('click will publish ');
             self.keyPublish(character);
             if (self.shift) self.modify('Shift');
             self.modify('');
         };
         this.keyPublish = function(text) {
             console.log('publish text ', text);
-            var charCode = text=='\n'?13:text.charCodeAt(0);
+            var charCode = text=='\n'?13:text=='Bksp'?8:text.charCodeAt(0);
 /*
             var pressEvent = jQuery.Event("keypress", {
                 keyCode: charCode, // For compatibility
@@ -130,6 +136,7 @@
                     key: 'Enter', // Specify the key you want to simulate (e.g., 'Enter', 'ArrowRight', 'a')
                     code: 'Enter', // Use 'code' for the physical key
                     keyCode: 13, // keyCode is deprecated but useful for broader compatibility
+                    which: 13, // keyCode is deprecated but useful for broader compatibility
                     bubbles: true, // Key events bubble up the DOM
                     cancelable: true // Event can be cancelled
                 });
@@ -140,7 +147,18 @@
                     document.body.focus();
                 $(document).trigger(keyevent);
                 */
-            }else {
+            }else if (charCode == 8){
+                const customKeydownEvent = new KeyboardEvent('keydown', {
+                    key: 'Backspace', // Specify the key you want to simulate (e.g., 'Enter', 'ArrowRight', 'a')
+                    code: 'Backspace', // Use 'code' for the physical key
+                    keyCode: 8, // keyCode is deprecated but useful for broader compatibility
+                    which: 8, // keyCode is deprecated but useful for broader compatibility
+                    bubbles: true, // Key events bubble up the DOM
+                    cancelable: true // Event can be cancelled
+                });
+                self.target.dispatchEvent(customKeydownEvent);
+
+            } else{
                 $(self.target).trigger(keyevent);
             }
         };
@@ -159,19 +177,19 @@
                     lkey = this.layout[x][y];
                     switch (lkey[1]) {
                         case 'Alt':
-                        case 'Shift':
+                        case '⇧':
                             if (this.shift) $(tds[y]).addClass('pressed');
                             break;
                         case 'Caps':
                             if (this.shiftlock) $(tds[y]).addClass('pressed');
                             break;
-                        case 'Enter': case 'Bksp': break;
+                        case '↩': case '⌫': break;
                         default:
                             if (type) {
                                 $(tds[y]).text(lkey[vchar] || '\xa0');
                             }
                     }
-                    if (y == tds.length - 1 && tds.length > this.keyCenter) $(tds[y]).addClass('last');
+                    //if (y == tds.length - 1 && tds.length > this.keyCenter) $(tds[y]).addClass('last');
                     if (lkey[0] == ' ' || lkey[1] == ' ') $(tds[y]).addClass('space');
                 }
             }
@@ -194,26 +212,36 @@
             //add keys
             for (let x = 0, lyt; lyt = this.layout[x++];){
                 $table =$('<table/>').appendTo($keyFrameDiv);
-                if (lyt.length <= this.keyCenter) $table.addClass('keyboardInputCenter');
+                $table.addClass('keyboardInputCenter');
                 var $tbody = $('<tbody/>').appendTo($table);
                 $tr = $('<tr/>').appendTo($tbody);
                 for (let y = 0, lkey; lkey = lyt[y++];) {
                     $td = $('<td/>').appendTo($tr);
                     $td.addClass('vkbd_key');
-                    if (lyt.length > this.keyCenter && y == lyt.length) $td.addClass('last');
+                    //if (lyt.length > this.keyCenter && y == lyt.length) $td.addClass('last');
                     if (lkey[0] == ' ' || lkey[1] == ' ') $td.addClass('space');
                     $td.text(lkey[0] || '\xa0');
                     $td.on('mousedown', function(e) {e.preventDefault();});
+                    console.log('switch on lkey 1', lkey[1])
                     switch (lkey[1]) {
-                        case 'Caps': case 'Shift':
-                            $td.on('click', (function(type) {
-                                return function() {
-                                    self.modify(type);
-                                    return false;
-                                }
-                            })(lkey[1]));
+                        case '⇧':
+                    console.log('switch shift');
+                            $td.on('click', function() {
+                                console.log('Shift clicked');
+                                self.modify('Shift');
+                                return false;
+                            });
                             break;
-                        case 'Enter':
+                        case '⌫':
+                    console.log('switch backspace');
+                            $td.on('click', function () {
+                                console.log('Backspace clicked');
+                                self.keyPublish("Bksp");
+                                return true;
+                            });
+                            break;
+                        case '↩':
+                    console.log('switch enter');
                             $td.on('click', function () {
                                 console.log('Enter clicked');
                                 self.keyPublish("\n");
@@ -221,6 +249,7 @@
                             });
                             break;
                         default:
+                    console.log('switch default');
                             $td.on('click', self.keyClick);
                     }
                 }
