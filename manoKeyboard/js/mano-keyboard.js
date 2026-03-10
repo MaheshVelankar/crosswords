@@ -208,7 +208,9 @@
         });
 
         /* typing */
-        $(document).on("click",".vk-key",function(){
+        $(document).on("mousedown touchstart",".vk-key",function(e){
+
+            e.preventDefault();
 
             if(!activeInput) return;
 
