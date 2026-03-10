@@ -2,7 +2,7 @@
     position:fixed;
     bottom:0;
     left:0;
-/*    width:100%; */
+    width:100%;
     background:#e3e6ea;
     padding:6px;
     display:none;
@@ -32,3 +32,25 @@ background:#bcdcff;
 .shift.active {
 background:#bcdcff;
 }
+
+#virtualKeyboard button.vk-space {
+    flex:4;
+}
+
+#virtualKeyboard button.vk-done {
+    flex:1.5;
+    background:#bcdcff;
+}
+#virtualKeyboard fieldset {
+    padding:0;
+}
+#virtualKeyboard input {
+    margin:0;
+    height: 15px;
+    width: 15px;
+}
+#virtualKeyboard input, fieldset, label, legend {
+    font-size:10px;
+    vertical-align: middle;
+}
+

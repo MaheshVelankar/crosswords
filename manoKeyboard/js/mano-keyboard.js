@@ -62,9 +62,25 @@
                 {n:",", s:"<"},
                 {n:".", s:">"},
                 {n:"/", s:"?"}
+            ],
+            [
+                {control:"mode"},
+                {action:"space",label:"space", k_classes:["vk-space"]},
+                {action:"done",label:"▾", k_classes:["vk-done"]}
             ]
         ]
     };
+
+    const vk_controls = {};
+    vk_controls['mode_html'] = `
+    <fieldset>
+  <legend>current script:</legend>
+    <input type="radio" id="dev" name="mode" value="dev" checked />
+    <label for="dev">dev</label>
+    <input type="radio" id="rom" name="mode" value="rom" />
+    <label for="rom">rom</label>
+</fieldset>
+    `;
 
     function buildKeyboard(layout){
         console.log('in buildKeyboard');
@@ -78,23 +94,30 @@
             let rowDiv = $('<div class="vk-row"></div>');
 
             row.forEach(key=>{
+                if (key.control) {
+                    let ctrl = $(vk_controls[`${key.control}_html`]);
+                    rowDiv.append(ctrl);
+                } else {
+                    let btn = $('<button class="vk-key"></button>')
+                    console.log('n', key.n, 'shift', key.s, 'label', key.label, 'action', key.action);
+                    if (key.k_classes){
+                        key.k_classes.forEach(c=>{$(btn).addClass(c)});
+                    }
 
-                let btn = $('<button class="vk-key"></button>')
-                console.log('n', key.n, 'shift', key.s, 'label', key.label, 'action', key.action);
-
-                if(key.action){
-                    console.log('will put action', key.action);
-                    btn.text(key.n?key.n:key.label);
-                    btn.data("action",key.action);
-                    if (key.n) btn.data("normal",key.n);
-                    if (key.s) btn.data("shift",key.s);
-                    console.log('put action', btn.data('action'));
-                } else if(key.n){
-                    btn.text(key.n);
-                    btn.data("normal",key.n);
-                    btn.data("shift",key.s);
+                    if(key.action){
+                        console.log('will put action', key.action);
+                        btn.text(key.n?key.n:key.label);
+                        btn.data("action",key.action);
+                        if (key.n) btn.data("normal",key.n);
+                        if (key.s) btn.data("shift",key.s);
+                        console.log('put action', btn.data('action'));
+                    } else if(key.n){
+                        btn.text(key.n);
+                        btn.data("normal",key.n);
+                        btn.data("shift",key.s);
+                    }
+                    rowDiv.append(btn);
                 }
-                rowDiv.append(btn)
             })
             kb.append(rowDiv);
         })
@@ -185,33 +208,48 @@
         /* typing */
         $(document).on("click",".vk-key",function(){
 
-            if(!activeInput) return
+            if(!activeInput) return;
 
-            let action = $(this).data("action")
+            let action = $(this).data("action");
 
             console.log('clicked on action', $(this).data('action'));
 
             if(action=="shift"){
-                shiftOn = !shiftOn
-                updateLabels()
-                return
+                shiftOn = !shiftOn;
+                updateLabels();
+                return;
             }
 
             if(action=="backspace"){
-                let v=$(activeInput).val()
-                $(activeInput).val(v.slice(0,-1))
-                return
+                let v=$(activeInput).val();
+                $(activeInput).val(v.slice(0,-1));
+                return;
+            }
+
+            if(action=="space"){
+                console.log('action space');
+                let v = $(activeInput).val();
+                $(activeInput).val(v + " ");
+                console.log('space val', $(activeInput).val());
+                return;
+            }
+
+            if(action=="done"){
+                $("#virtualKeyboard").hide();
+                activeInput = null;
+                $(activeInput).blur();
+                return;
             }
 
             let char = shiftOn
                 ? $(this).data("shift")
-                : $(this).data("normal")
+                : $(this).data("normal");
 
-            let val = $(activeInput).val()
+            let val = $(activeInput).val();
 
-            $(activeInput).val(val + char)
+            $(activeInput).val(val + char);
             shiftOn = false;
-            updateLabels()
+            updateLabels();
         });
         /*
         $(document).on("click","#virtualKeyboard button[data-key]",function(){
