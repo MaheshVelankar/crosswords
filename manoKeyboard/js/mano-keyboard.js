@@ -198,6 +198,8 @@
 
         let inputs = this;
 
+        inputs.attr('inputmode', 'none');
+
         /* focus */
 
         inputs.on("focus", function(){
