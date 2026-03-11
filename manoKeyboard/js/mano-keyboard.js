@@ -65,6 +65,7 @@
             ],
             [
                 {control:"mode"},
+                {action:"help",label:"?⃝"},
                 {action:"space",label:"space", k_classes:["vk-space"]},
                 {action:"done",label:"▾", k_classes:["vk-done"]}
             ]
@@ -195,6 +196,13 @@
 
         //createKeyboard();
         buildKeyboard(VK_LAYOUT.default);
+        $("#vkHelpClose").on("click",function(){
+            $("#vkHelpOverlay").hide();
+        });
+        $("#vkHelpOverlay").on("click",function(e){
+            if(e.target===this)
+                $(this).hide();
+        });
 
         let inputs = this;
 
@@ -242,6 +250,11 @@
                 $("#virtualKeyboard").hide();
                 activeInput = null;
                 $(activeInput).blur();
+                return;
+            }
+
+            if(action=="help"){
+                $("#vkHelpOverlay").show();
                 return;
             }
 

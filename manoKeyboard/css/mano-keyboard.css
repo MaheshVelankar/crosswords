@@ -67,3 +67,47 @@ background:#bcdcff;
     vertical-align: middle;
 }
 
+/* keyboard help */
+#vkHelpOverlay{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    display:none;
+    z-index:9999;
+}
+
+#vkHelpBox{
+    background:white;
+    width:90%;
+    max-width:500px;
+    margin:80px auto;
+    border-radius:8px;
+    overflow:hidden;
+    box-shadow:0 10px 30px rgba(0,0,0,0.4);
+}
+
+.vk-help-header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:12px;
+    background:#f2f2f2;
+    font-weight:bold;
+}
+
+.vk-help-content{
+    padding:16px;
+    line-height:1.6;
+}
+
+#vkHelpClose{
+    border:none;
+    background:none;
+    font-size:18px;
+    cursor:pointer;
+}
+
+
