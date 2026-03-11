@@ -83,6 +83,38 @@
 </fieldset>
     `;
 
+    function buildKeyboardHelp(layout){
+        if($("#vkHelpOverlay").length) return;
+        var helpScreen = $(`
+        <div id="vkHelpOverlay">
+            <div id="vkHelpBox">
+                <div class="vk-help-header">
+                    <span>Keyboard Help</span>
+                    <button id="vkHelpClose">✕</button>
+                </div>
+                <div class="vk-help-content">
+                    <h3>Typing</h3>
+                    <p>Tap keys to insert characters.</p>
+                    <h3>Shift</h3>
+                    <p>Use ⇧ to toggle uppercase letters.</p>
+                    <h3>Transliteration</h3>
+                    <p>Press <b>अ</b> to convert Roman typing into Devanagari.</p>
+                    <h3>Done</h3>
+                    <p>Press ✓ to close the keyboard.</p>
+                </div>
+            </div>
+        </div>
+        `);
+        $('body').append($(helpScreen));
+        $("#vkHelpClose").on("click",function(){
+            $("#vkHelpOverlay").hide();
+        });
+        $("#vkHelpOverlay").on("click",function(e){
+            if(e.target===this)
+                $(this).hide();
+        });
+    }
+
     function buildKeyboard(layout){
         console.log('in buildKeyboard');
         if($("#virtualKeyboard").length) return;
@@ -196,13 +228,7 @@
 
         //createKeyboard();
         buildKeyboard(VK_LAYOUT.default);
-        $("#vkHelpClose").on("click",function(){
-            $("#vkHelpOverlay").hide();
-        });
-        $("#vkHelpOverlay").on("click",function(e){
-            if(e.target===this)
-                $(this).hide();
-        });
+        buildKeyboardHelp();
 
         let inputs = this;
 
